@@ -1,0 +1,45 @@
+{% extends "master.html" %}
+{% block title %}Lista de Aprendices{% endblock %}
+{% block content %}
+    <div class="contenido_la">
+        <nav class="navla">
+            <ul>
+                <li><a href="{% url 'aprendices' %}">Inicio</a></li>
+                <li><a href="{% url 'aprendices' %}">Aprendices</a></li>
+                <li><a href="{% url 'aprendices' %}">Programas</a></li>
+                <li><a href="{% url 'aprendices' %}">Contacto</a></li>
+            </ul>
+        </nav>
+    <section class="sectionla">
+        <h2>Lista de Aprendices</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Documento de Identidad</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Teléfono</th>
+                    <th>Correo Electrónico</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Ciudad</th>
+                    <th>Programa</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for aprendiz in aprendices %}
+                <tr>
+                    <td>{{ aprendiz.documento_identidad }}</td>
+                    <td>{{ aprendiz.nombre }}</td>
+                    <td>{{ aprendiz.apellido }}</td>
+                    <td>{{ aprendiz.telefono }}</td>
+                    <td>{{ aprendiz.correo }}</td>
+                    <td>{{ aprendiz.fecha_nacimiento }}</td>
+                    <td>{{ aprendiz.ciudad }}</td>
+                    <td>{{ aprendiz.programa }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+{% endblock%}
