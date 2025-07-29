@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - SENA{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>Bienvenido a SENA app</h1>
+        <p>Tu plataforma integral para administrar y consultar información de aprendices y programas de formación.</p>
+        <a href="{% url 'aprendices' %}" class="btn-primary">Ver Lista de Aprendices</a>
+        <a href="#" class="btn-secondary">Explorar Programas</a>
+    </div>
+</section>
+
+<section class="info-cards">
+    <div class="card">
+        <i class="fas fa-users icon-green"></i>
+        <h3>Gestión de Aprendices</h3>
+        <p>Accede, edita y gestiona la información detallada de cada aprendiz.</p>
+        <a href="{% url 'aprendices' %}" class="card-link">Ir a Aprendices <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="card">
+        <i class="fas fa-book-open icon-green"></i>
+        <h3>Nuestros Programas</h3>
+        <p>Descubre la variedad de programas de formación técnica y tecnológica.</p>
+        <a href="#" class="card-link">Ver Programas <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="card">
+        <i class="fas fa-chart-line icon-green"></i>
+        <h3>Estadísticas Clave</h3>
+        <p>Consulta datos y métricas importantes sobre la población estudiantil.</p>
+        <a href="#" class="card-link">Ver Estadísticas <i class="fas fa-arrow-right"></i></a>
+    </div>
+</section>
+
+<section class="call-to-action">
+    <h2>¿Necesitas ayuda o más información?</h2>
+    <p>Nuestro equipo está listo para asistirte. Contáctanos para resolver tus dudas.</p>
+    <a href="#" class="btn-primary">Contáctanos Ahora</a>
+</section>
+{% endblock %}

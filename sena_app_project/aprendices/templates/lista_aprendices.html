@@ -1,16 +1,21 @@
-{% extends "master.html" %}
+{% extends "base.html" %}
 {% block title %}Lista de Aprendices{% endblock %}
 {% block content %}
     <div class="contenido_la">
         <nav class="navla">
+            <div class="t1">
+            <h1>Aprendices SENA</h1>
+            </div>
+            <div class="navegacion">
             <ul>
-                <li><a href="{% url 'aprendices' %}">Inicio</a></li>
-                <li><a href="{% url 'aprendices' %}">Aprendices</a></li>
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>                
                 <li><a href="{% url 'aprendices' %}">Programas</a></li>
                 <li><a href="{% url 'aprendices' %}">Contacto</a></li>
             </ul>
+            </div>
         </nav>
     <section class="sectionla">
+        {% if lista_aprendices %}
         <h2>Lista de Aprendices</h2>
         <table border="1">
             <thead>
@@ -26,7 +31,7 @@
             </tr>
             </thead>
             <tbody>
-                {% for aprendiz in aprendices %}
+                {% for aprendiz in lista_aprendices %}
                 <tr>
                     <td>{{ aprendiz.documento_identidad }}</td>
                     <td>{{ aprendiz.nombre }}</td>
@@ -40,6 +45,10 @@
                 {% endfor %}
             </tbody>
         </table>
+        <a href="{% url 'admin:aprendices_aprendiz_add' %}" class="btn_saveA">
+                    Nuevo Aprendiz
+                </a>
     </section>
 </div>
+{%endif%}
 {% endblock%}
