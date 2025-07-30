@@ -136,14 +136,6 @@ body {
     color: var(--light-green);
 }
 
-.contenido_la {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: var(--white-color);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
 
 .navla {
     background-color: var(--dark-green);
@@ -549,5 +541,103 @@ table tbody tr:hover {
     .btn_saveA {
         padding: 10px 20px;
         font-size: 0.9em;
+    }
+}
+.total-aprendices {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--medium-green), var(--dark-green));
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.total-aprendices:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(46, 139, 87, 0.4);
+    border-color: var(--light-green);
+}
+
+.total-aprendices i {
+    margin-right: 8px;
+    color: var(--light-green);
+}
+
+.acciones-cell {
+    text-align: center;
+    padding: 8px 5px;
+    white-space: nowrap;
+}
+
+.btn_editA,
+.btn_deleteA {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85em;
+    margin: 2px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 70px;
+    text-align: center;
+}
+
+.btn_editA {
+    background-color: #007bff;
+    color: var(--white-color);
+    border: 1px solid #007bff;
+}
+
+.btn_editA:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.btn_deleteA {
+    background-color: #dc3545;
+    color: var(--white-color);
+    border: 1px solid #dc3545;
+}
+
+.btn_deleteA:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.acciones-form {
+    display: inline-block;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .total-aprendices {
+        font-size: 1em;
+        padding: 8px 16px;
+        margin-bottom: 20px;
+    }
+    
+    .btn_editA,
+    .btn_deleteA {
+        padding: 8px 12px;
+        font-size: 0.8em;
+        margin: 3px 1px;
+        min-width: 60px;
+    }
+    
+    .acciones-cell {
+        padding: 10px 5px;
     }
 }

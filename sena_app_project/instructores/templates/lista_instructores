@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Lista de Instructores{% endblock %}
+{% block content %}
+    <div class="contenido_la">
+        <nav class="navla">
+            <div class="t1">
+                <h1>Instructores SENA</h1>
+            </div>
+            <div class="navegacion">
+                <ul>
+                    <li><a href="{% url 'inicio' %}">Inicio</a></li>                
+                    <li><a href="{% url 'aprendices' %}">Programas</a></li>
+                    <li><a href="{% url 'aprendices' %}">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="sectionla">
+            {% if lista_instructores %}
+                <h2>Lista de Instructores</h2>
+                    <span class="total-aprendices">
+                        <i class="fas fa-users"></i>
+                            Total de Instructores: {{ total_aprendices }}
+                    </span>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Documento</th>
+                        <th>Tipo</th>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Correo Electrónico</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Ciudad</th>
+                        <th>Dirección</th>
+                        <th>Nivel Educativo</th>
+                        <th>Especialidad</th>
+                        <th>Años de Experiencia</th>
+                        <th>Activo</th>
+                        <th>Fecha de Registro</th>
+                        <th>Acciones</th>
+                    </tr>   
+                </thead>
+                <tbody>
+                    {% for Instructores in lista_instructores %}
+                        <tr>
+                            <td>{{ instructores.documento_identidad }}</td>
+                            <td>{{ instructores.tipo_documento }}</td>
+                            <td>{{ instructores.nombre }}{{ instructores.apellido }}</td>
+                            <td>{{ instructores.telefono }}</td>
+                            <td>{{ instructores.correo }}</td>
+                            <td>{{ instructores.fecha_nacimiento }}</td>
+                            <td>{{ instructores.ciudad }}</td>
+                            <td>{{ instructores.direccion }}</td>
+                            <td>{{ instructores.nivel_educativo }}</td>
+                            <td>{{ instructores.especialidad }}</td>
+                            <td>{{ instructores.anos_experiencia }}</td>
+                            <td>{{ instructores.activo }}</td>
+                            <td>{{ instructores.fecha_registro }}</td>
+                            <td class="acciones-cell">
+                                <a href="{% url 'admin:instructores_instructor_change' instructores.id %}" class="btn_editA">Editar</a>
+                                    <form action="{% url 'admin:instructores_instructor_delete' instructores.id %}" method="post" class="acciones-form">
+                                            {% csrf_token %}
+                                        <button type="submit" class="btn_deleteA">Eliminar</button>
+                                    </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        <a href="{% url 'admin:aprendices_aprendiz_add' %}" class="btn_saveA">
+            Nuevo Aprendiz
+        </a>
+    </section>
+</div>
+{%endif%}
+{% endblock%}
