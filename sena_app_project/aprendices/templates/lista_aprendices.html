@@ -42,16 +42,14 @@
                             <td>{{ aprendiz.nombre }}</td>
                             <td>{{ aprendiz.apellido }}</td>
                             <td>{{ aprendiz.telefono }}</td>
-                            <td>{{ aprendiz.correo }}</td>
+                            <td>
+                                <a href="mailto:{{ aprendiz.correo }}">{{ aprendiz.correo }}</a>
+                            </td>
                             <td>{{ aprendiz.fecha_nacimiento }}</td>
                             <td>{{ aprendiz.ciudad }}</td>
                             <td>{{ aprendiz.programa }}</td>
                             <td class="acciones-cell">
-                                <a href="{% url 'admin:aprendices_aprendiz_change' aprendiz.id %}" class="btn_editA">Editar</a>
-                                    <form action="{% url 'admin:aprendices_aprendiz_delete' aprendiz.id %}" method="post" class="acciones-form">
-                                            {% csrf_token %}
-                                        <button type="submit" class="btn_deleteA">Eliminar</button>
-                                    </form>
+                                <a href="{% url 'admin:aprendices_aprendiz_change' aprendiz.id %}" class="btn_editA">Editar</a>                            
                             </td>
                         </tr>
                     {% endfor %}

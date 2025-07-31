@@ -5,10 +5,23 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>{% block title %}{% endblock %}</title>
                     {% load static %}
-                        <link rel="stylesheet" href="{% static 'css/styles.css' %}">    
+                        <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+                            
     </head>
     <body>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{% url 'inicio' %}">SENA App</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'aprendices' %}">Aprendices</a></li>
+                <li><a href="{% url 'instructores:lista_instructores' %}">Instructores</a></li>
+            </ul>
         {% block content %}
             {% endblock  %}
+            <footer class="footer">
+            <p>&copy; 2024 SENA. Todos los derechos reservados.</p>
+            <p>Desarrollado por Camilo Avila</p>
     </body>
 </html>

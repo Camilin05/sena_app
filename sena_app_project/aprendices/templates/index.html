@@ -6,6 +6,7 @@
                     <h1>Bienvenido a la app del SENA by Camilo Avila</h1>
                         <p>Tu plataforma integral para administrar y consultar información de aprendices y programas de formación.</p>
                             <a href="{% url 'aprendices' %}" class="btn-primary">Ver Lista de Aprendices</a>
+                            <a href="{% url 'instructores:lista_instructores' %}" class="btn-secondary">Ver Lista de Instructores</a>
                 </div>
             </section>
             <section class="info-cards">
@@ -13,13 +14,19 @@
                     <i class="fas fa-users icon-green"></i>
                         <h3>Gestión de Aprendices</h3>
                             <p>Accede, edita y gestiona la información detallada de cada aprendiz.</p>
-                                <a href="{% url 'aprendices' %}" class="card-link">Ir a Aprendices <i class="fas fa-arrow-right"></i></a>
-                            </div>
+                                <img src="https://www.seguracontadores.com/wp-content/uploads/2024/06/aprendices-sena-5.jpg" alt="Aprendices SENA" class="card-image" height="200px">
+                                    <div class="card-text">
+                                        <p>Consulta y actualiza los datos de los aprendices de manera sencilla.</p>
+                                </div>  
+                                    <a href="{% url 'aprendices' %}" class="card-link">Ir a Aprendices <i class="fas fa-arrow-right"></i></a>
+                                </div>
                 <div class="card">  
                     <i class="fas fa-book-open icon-green"></i>
                         <h3>Gestión de Instructores</h3>
                             <p>Accede, edita y gestiona la información detallada de cada instructor.</p>
-                                <a href="{% url "instructores" %}" class="card-link">Ir a Instructores <i class="fas fa-arrow-right"></i></a>
+                                    <img src="https://www.tropicanafm.com/wp-content/uploads/2024/05/Instructor-sena.png" alt="Instructores SENA" class="card-image" height="200px">                                        
+                                    <p>Consulta y actualiza los datos de los aprendices de manera sencilla.</p>
+                                    <a href={% url 'instructores:lista_instructores'%} class="card-link">Ir a Instructores <i class="fas fa-arrow-right"></i></a>
                             </div>
             </section>
             <section class="call-to-action">

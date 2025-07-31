@@ -19,7 +19,7 @@
                 <h2>Lista de Instructores</h2>
                     <span class="total-aprendices">
                         <i class="fas fa-users"></i>
-                            Total de Instructores: {{ total_aprendices }}
+                            Total de Instructores: {{ total_instructores }}
                     </span>
             <table border="1">
                 <thead>
@@ -41,13 +41,15 @@
                     </tr>   
                 </thead>
                 <tbody>
-                    {% for Instructores in lista_instructores %}
+                    {% for instructores in lista_instructores %}
                         <tr>
                             <td>{{ instructores.documento_identidad }}</td>
                             <td>{{ instructores.tipo_documento }}</td>
-                            <td>{{ instructores.nombre }}{{ instructores.apellido }}</td>
+                            <td>{{ instructores.nombre }} {{ instructores.apellido }}</td>
                             <td>{{ instructores.telefono }}</td>
-                            <td>{{ instructores.correo }}</td>
+                            <td>
+                                <a href="mailto:{{ instructores.correo }}">{{ instructores.correo }}</a>
+                            </td>
                             <td>{{ instructores.fecha_nacimiento }}</td>
                             <td>{{ instructores.ciudad }}</td>
                             <td>{{ instructores.direccion }}</td>
@@ -57,18 +59,16 @@
                             <td>{{ instructores.activo }}</td>
                             <td>{{ instructores.fecha_registro }}</td>
                             <td class="acciones-cell">
-                                <a href="{% url 'admin:instructores_instructor_change' instructores.id %}" class="btn_editA">Editar</a>
-                                    <form action="{% url 'admin:instructores_instructor_delete' instructores.id %}" method="post" class="acciones-form">
-                                            {% csrf_token %}
-                                        <button type="submit" class="btn_deleteA">Eliminar</button>
-                                    </form>
+                                <a href="{% url 'admin:instructores_instructor_change' instructores.id %}"  class="btn_editA">
+                                    Editar
+                                </a>
                             </td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
-        <a href="{% url 'admin:aprendices_aprendiz_add' %}" class="btn_saveA">
-            Nuevo Aprendiz
+        <a href= "{% url 'admin:instructores_instructor_add'  %}" class="btn_saveA">
+            Nuevo Instructor
         </a>
     </section>
 </div>
