@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Lista de Programas{% endblock %}
+{% block content %}
+    <div class="contenido_la">
+        <nav class="navla">
+            <div class="t1">
+                <h1>Programas de SENA</h1>
+            </div>  
+        </nav>
+        <section class="sectionla">
+            {% if lista_programas %}
+                <h2>Lista de programas</h2>
+                    <span class="total-aprendices">
+                        <i class="fas fa-users"></i>
+                            Total de programas: {{ total_programas }}
+                    </span>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <td>Código</td>
+                        <td>Nombre</td>
+                        <td>Nivel de formación</td>
+                        <td>Modalidad</td>
+                        <td>Duración(meses)</td>
+                        <td>Duración(horas)</td>                        
+                        <td>Centro de formación</td>
+                        <td>Regional</td>
+                        <td>Estado</td>
+                        <td>Fechas creación</td>
+                        <td>Fechas reggistro</td>
+                        <td>Acciones</td>
+                    </tr>   
+                </thead>
+                <tbody>
+                    {% for programas in lista_programas %}
+                        <tr>
+                            <td>{{ programas.codigo }}</td>
+                            <td>{{ programas.nombre }}</td>
+                            <td>{{ programas.nivel_formacion }}</td>
+                            <td>{{ programas.modalidad }}</td>
+                            <td>{{ programas.duracion_meses }}</td>
+                            <td>{{ programas.duracion_horas }}</td>                            
+                            <td>{{ programas.centro_formacion }}</td>
+                            <td>{{ programas.regional }}</td>
+                            <td>{{ programas.estado }}</td>
+                            <td>{{ programas.fecha_creacion }}</td>
+                            <td>{{ programas.fecha_registro }}</td>
+                            <td class="acciones-cell">
+                                <a href="{% url 'admin:programas_programa_change' programas.id %}" class="btn_editA">Editar</a>
+                    {% endfor %}
+                </tbody>
+            </table>
+        <a href="{% url 'admin:programas_programa_add' %}" class="btn_saveA">
+            Nuevo Programa
+        </a>
+    </section>
+</div>
+{%endif%}
+{% endblock%}
