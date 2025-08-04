@@ -51,7 +51,24 @@
         <a href="{% url 'admin:aprendices_aprendiz_add' %}" class="btn_saveA">
             Nuevo Aprendiz
         </a>
-    </section>
-</div>
-{%endif%}
+            {% else %}
+                <div class="empty-state">
+                    <div class="empty-state-content">
+                        <i class="fas fa-users empty-state-icon"></i>
+                        <h3>No hay aprendices registrados</h3>
+                        <p>Aún no se han registrado aprendices en el sistema. Puedes agregar el primer aprendiz usando el panel administrativo.</p>
+                        
+                        <div class="empty-state-actions">
+                            <a href="{% url 'admin:aprendices_aprendiz_add' %}" class="btn-primary">
+                                <i class="fas fa-plus"></i> Agregar Primer Aprendiz
+                            </a>
+                            <a href="{% url 'admin:index' %}" class="btn-secondary">
+                                <i class="fas fa-cog"></i> Panel Administrativo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </section>
+    </div>
 {% endblock%}

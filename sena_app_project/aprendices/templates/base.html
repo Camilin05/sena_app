@@ -16,17 +16,11 @@
         </h1>
         <nav class="navbar">
             <ul>
-                <li><a href="{% url 'inicio' %}">
-                    <i class="fas fa-home"></i> Inicio
+                <li><a href="{% url 'aprendices:inicio' %}">
+                    <i class="fas fa-home"></i> Inicio                
                 </a></li>
-                <li><a href="{% url 'aprendices' %}">
-                    <i class="fas fa-users"></i> Aprendices
-                </a></li>
-                <li><a href="{% url 'instructores:lista_instructores' %}">
-                    <i class="fas fa-chalkboard-teacher"></i> Instructores
-                </a></li>
-                <li><a href="{% url 'programas:lista_programas' %}">
-                    <i class="fas fa-book-open"></i> Programas
+                <li><a href="{% url 'admin:index' %}">
+                    <i class="fas fa-tachometer-alt"></i> Admin
                 </a></li>
             </ul>
         </nav>

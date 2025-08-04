@@ -53,7 +53,24 @@
         <a href="{% url 'admin:programas_programa_add' %}" class="btn_saveA">
             Nuevo Programa
         </a>
-    </section>
-</div>
-{%endif%}
+            {% else %}
+                <div class="empty-state">
+                    <div class="empty-state-content">
+                        <i class="fas fa-book-open empty-state-icon"></i>
+                        <h3>No hay programas registrados</h3>
+                        <p>Aún no se han registrado programas en el sistema. Puedes agregar el primer programa usando el panel administrativo.</p>
+                        
+                        <div class="empty-state-actions">
+                            <a href="{% url 'admin:programas_programa_add' %}" class="btn-primary">
+                                <i class="fas fa-plus"></i> Agregar Primer Programa
+                            </a>
+                            <a href="{% url 'admin:index' %}" class="btn-secondary">
+                                <i class="fas fa-cog"></i> Panel Administrativo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </section>
+    </div>
 {% endblock%}
