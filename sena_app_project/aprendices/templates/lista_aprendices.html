@@ -5,14 +5,7 @@
         <nav class="navla">
             <div class="t1">
                 <h1>Aprendices SENA</h1>
-            </div>
-            <div class="navegacion">
-                <ul>
-                    <li><a href="{% url 'inicio' %}">Inicio</a></li>                
-                    <li><a href="{% url 'aprendices' %}">Programas</a></li>
-                    <li><a href="{% url 'aprendices' %}">Contacto</a></li>
-                </ul>
-            </div>
+            </div>  
         </nav>
         <section class="sectionla">
             {% if lista_aprendices %}
@@ -42,16 +35,14 @@
                             <td>{{ aprendiz.nombre }}</td>
                             <td>{{ aprendiz.apellido }}</td>
                             <td>{{ aprendiz.telefono }}</td>
-                            <td>{{ aprendiz.correo }}</td>
+                            <td>
+                                <a href="mailto:{{ aprendiz.correo }}">{{ aprendiz.correo }}</a>
+                            </td>
                             <td>{{ aprendiz.fecha_nacimiento }}</td>
                             <td>{{ aprendiz.ciudad }}</td>
                             <td>{{ aprendiz.programa }}</td>
                             <td class="acciones-cell">
-                                <a href="{% url 'admin:aprendices_aprendiz_change' aprendiz.id %}" class="btn_editA">Editar</a>
-                                    <form action="{% url 'admin:aprendices_aprendiz_delete' aprendiz.id %}" method="post" class="acciones-form">
-                                            {% csrf_token %}
-                                        <button type="submit" class="btn_deleteA">Eliminar</button>
-                                    </form>
+                                <a href="{% url 'admin:aprendices_aprendiz_change' aprendiz.id %}" class="btn_editA">Editar</a>                            
                             </td>
                         </tr>
                     {% endfor %}
