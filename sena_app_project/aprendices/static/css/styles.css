@@ -255,7 +255,13 @@ body {
     text-decoration: none;
     color: white;
 }
-
+.detalle-curso {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
 .detalle-programa {
     background: white;
     padding: 30px;
@@ -279,10 +285,12 @@ body {
 }
 
 .info-grupo {
-    background: #f8f9fa;
+    text-align: center;
+    background: #8dc2f6;
     padding: 20px;
     border-radius: 8px;
     border-left: 4px solid var(--medium-green, #28a745);
+    margin: 20px;
 }
 
 .info-grupo h3 {

@@ -18,32 +18,26 @@
             <table border="1">
                 <thead>
                     <tr>
-                        <td>Código</td>
-                        <td>Nombre</td>
+                        <td>Código curso</td>
+                        <td>Nombre curso</td>
+                        <td>Programa de formación</td>
                         <td>Fecha Inicio</td>
                         <td>Fecha Fin</td>
-                        <td>Horario</td>
-                        <td>Aula/Ambiente</td>
-                        <td>Cupos Máximos</td>
-                        <td>Estado</td>
-                        <td>Observaciones</td>
-                        <td>Fecha Registro</td>
+                        <td>Horario</td>                                            
+                        <td>Estado</td>                                                
                         <td>Acciones</td>
                     </tr>   
                 </thead>
                 <tbody>
                     {% for curso in lista_cursos %}
                         <tr>
-                            <td>{{ curso.codigo }}</td>
+                            <td><strong><a href ="curso/{{ curso.id }}">{{ curso.codigo }}</a></strong></td>
                             <td>{{ curso.nombre }}</td>
+                            <td>{{ curso.programa }}</td>
                             <td>{{ curso.fecha_inicio }}</td>
-                            <td>{{ curso.fecha_fin }}</td>
-                            <td>{{ curso.horario }}</td>
-                            <td>{{ curso.aula }}</td>
-                            <td>{{ curso.cupos_maximos }}</td>
-                            <td>{{ curso.estado }}</td>
-                            <td>{{ curso.observaciones }}</td>
-                            <td>{{ curso.fecha_registro }}</td>
+                            <td>{{ curso.fecha_fin }}</td>     
+                            <td>{{ curso.horario }}</td>                                                  
+                            <td>{{ curso.estado }}</td>                                                        
                             <td class="acciones-cell">
                                 <a href="{% url 'admin:aprendices_curso_change' curso.id %}" class="btn_editA">Editar</a>
                             </td>

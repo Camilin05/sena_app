@@ -21,13 +21,10 @@
                         <td>Nombre</td>
                         <td>Nivel de formación</td>
                         <td>Modalidad</td>
-                        <td>Duración(meses)</td>
-                        <td>Duración(horas)</td>                        
+                        <td>Duración(meses)</td>                                              
                         <td>Centro de formación</td>
-                        <td>Regional</td>
-                        <td>Estado</td>
-                        <td>Fechas creación</td>
-                        <td>Fechas reggistro</td>
+                        <td>Regional</td>                        
+                        <td>Fechas creación</td>                        
                         <td>Acciones</td>
                     </tr>   
                 </thead>
@@ -38,13 +35,10 @@
                             <td>{{ programas.nombre }}</td>
                             <td>{{ programas.nivel_formacion }}</td>
                             <td>{{ programas.modalidad }}</td>
-                            <td>{{ programas.duracion_meses }}</td>
-                            <td>{{ programas.duracion_horas }}</td>                            
+                            <td>{{ programas.duracion_meses }}</td>                                                     
                             <td>{{ programas.centro_formacion }}</td>
                             <td>{{ programas.regional }}</td>
-                            <td>{{ programas.estado }}</td>
-                            <td>{{ programas.fecha_creacion }}</td>
-                            <td>{{ programas.fecha_registro }}</td>
+                            <td>{{ programas.fecha_creacion }}</td>                        
                             <td class="acciones-cell">
                                 <a href="{% url 'admin:programas_programa_change' programas.id %}" class="btn_editA">Editar</a>
                     {% endfor %}

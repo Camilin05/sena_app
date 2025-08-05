@@ -3,5 +3,36 @@
 {% block title %}Detalles Cursos - SENA APP{% endblock %}
 
 {% block content %}
-    <h1>Detalles del Curso</h1>
+    <section class="detalle-curso">
+        <h2>Detalles del Curso: </h2>
+        <div class="curso-info">
+            <div class="info-grupo">
+                <h3>Información General</h3>
+                    <p><strong>Programa:</strong> {{ curso.programa }}</p>
+                        <p><strong>Código:</strong> {{ curso.codigo }}</p>
+                            <p><strong>Nombre:</strong> {{ curso.nombre }}</p>                    
+                                <p><strong>Estado:</strong> {{ curso.estado }}</p>
+                                    <p><strong>Ambiente:</strong> {{ curso.aula }}</p>
+                                        <p><strong>Fecha de Inicio:</strong> {{ curso.fecha_inicio }}</p>
+                                            <p><strong>Fecha de Fin:</strong> {{ curso.fecha_fin }}</p>
+                                                {% if curso.observaciones %}
+                                                    <p><strong>Observaciones:</strong> {{ curso.observaciones }}</p>
+                                                {% else %}
+                                                    <p><strong>Observaciones:</strong> No hay observaciones registradas.</p>
+                                                {% endif %}                                            
+                                                    <p><strong>Horario:</strong> {{ curso.horario }}</p>
+            </div>
+            <div class="info-grupo">
+                <h3>Aprendices registrados</h3>
+                <p><strong>Aprendices:</strong> {{ curso.aprendices.count }}</p>
+            </div>
+            <div class="info-grupo">
+                <h3>Instructores</h3>
+                <p><strong>Instructor a Cargo:</strong> {{ curso.instructor_coordinador }}</p>
+        </div>
+        <div class="acciones">
+            <a href="#" class="btn-primary">Editar Curso</a>
+            <a href="#" class="btn-secondary">Volver a Cursos</a>
+        </div>
+    </section>
 {% endblock %}

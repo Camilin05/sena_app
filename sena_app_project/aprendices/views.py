@@ -20,7 +20,6 @@ def inicio(request):
     total_cursos = Curso.objects.count()
     cursos_activos = Curso.objects.filter(estado__in=['INI', 'EJE']).count()
     template = loader.get_template('index.html')
-    
     context = {
         'total_aprendices': total_aprendices,
         'total_cursos': total_cursos,
