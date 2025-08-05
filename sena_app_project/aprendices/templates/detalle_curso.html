@@ -22,17 +22,38 @@
                                                 {% endif %}                                            
                                                     <p><strong>Horario:</strong> {{ curso.horario }}</p>
             </div>
-            <div class="info-grupo">
-                <h3>Aprendices registrados</h3>
-                <p><strong>Aprendices:</strong> {{ curso.aprendices.count }}</p>
+            <div class="info-grupo">                    
+                        <h3>Aprendices Registrados</h3>                    
+                    <span>{{ aprendices_curso|length }} estudiantes</span>                                
+                        {% for aprendiz in aprendices_curso %}                                                    
+                                <h5>{{ aprendiz }}</h5>                                                    
+                        {% endfor %}                    
+                {% if aprendices_curso %}                                            
+                            <p>
+                                Lista de aprendices: <a href="{% url 'aprendices:lista_aprendices' %}" class="btn-dc">
+                                    Ver
+                                </a> 
+                            <p>                                           
+                {% endif %}                   
             </div>
             <div class="info-grupo">
                 <h3>Instructores</h3>
                 <p><strong>Instructor a Cargo:</strong> {{ curso.instructor_coordinador }}</p>
+                <p><strong>Instructores:</strong> {{ instructoqres_curso|length }}</p>
+                    {% for instructor in instructoqres_curso %}
+                        <p>{{ instructor }}</p>
+                    {% endfor %}
+                    {% if instructoqres_curso %}
+                        <p>
+                            Lista de instructores: <a href="{% url 'instructores:lista_instructores' %}" class="btn-dc">
+                                Ver
+                            </a> 
+                        <p>
+                            {% endif %}
         </div>
         <div class="acciones">
-            <a href="#" class="btn-primary">Editar Curso</a>
-            <a href="#" class="btn-secondary">Volver a Cursos</a>
+            <a href="{% url 'admin:aprendices_curso_change' curso.id %}" class="btn-primary">Editar</a>
+            <a href="/lista_cursos" class="btn-secondary">Volver</a> 
         </div>
     </section>
 {% endblock %}
