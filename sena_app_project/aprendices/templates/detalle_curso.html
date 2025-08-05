@@ -7,7 +7,9 @@
         <h2>Detalles del Curso: </h2>
         <div class="curso-info">
             <div class="info-grupo">
-                <h3>Información General</h3>
+                <div class="info_tittle">
+                <h2>Información General</h2>
+                </div>
                     <p><strong>Programa:</strong> {{ curso.programa }}</p>
                         <p><strong>Código:</strong> {{ curso.codigo }}</p>
                             <p><strong>Nombre:</strong> {{ curso.nombre }}</p>                    
@@ -22,8 +24,10 @@
                                                 {% endif %}                                            
                                                     <p><strong>Horario:</strong> {{ curso.horario }}</p>
             </div>
-            <div class="info-grupo">                    
-                        <h3>Aprendices Registrados</h3>                    
+            <div class="info-grupo">     
+                    <div class="info_tittle">         
+                        <h2>Aprendices Registrados</h2>   
+                    </div>
                     <span>{{ aprendices_curso|length }} estudiantes</span>                                
                         {% for aprendiz in aprendices_curso %}                                                    
                                 <h5>{{ aprendiz }}</h5>                                                    
@@ -37,12 +41,14 @@
                 {% endif %}                   
             </div>
             <div class="info-grupo">
-                <h3>Instructores</h3>
-                <p><strong>Instructor a Cargo:</strong> {{ curso.instructor_coordinador }}</p>
-                <p><strong>Instructores:</strong> {{ instructoqres_curso|length }}</p>
-                    {% for instructor in instructoqres_curso %}
-                        <p>{{ instructor }}</p>
-                    {% endfor %}
+                <div class="info_tittle">
+                    </h2>Instructores</h2>
+                </div>
+                    <p><strong>Instructor a Cargo:</strong> {{ curso.instructor_coordinador }}</p>
+                        <p><strong>Instructores:</strong> {{ instructoqres_curso|length }}</p>
+                            {% for instructor in instructoqres_curso %}
+                                <p>{{ instructor }}</p>
+                            {% endfor %}
                     {% if instructoqres_curso %}
                         <p>
                             Lista de instructores: <a href="{% url 'instructores:lista_instructores' %}" class="btn-dc">
