@@ -19,39 +19,39 @@
                 <thead>
                     <tr>
                         <th>Documento</th>
-                        <th>Tipo</th>
+                        
                         <th>Nombre</th>
                         <th>Teléfono</th>
                         <th>Correo Electrónico</th>
-                        <th>Fecha de Nacimiento</th>
+                        
                         <th>Ciudad</th>
-                        <th>Dirección</th>
+                        
                         <th>Nivel Educativo</th>
                         <th>Especialidad</th>
                         <th>Años de Experiencia</th>
                         <th>Activo</th>
-                        <th>Fecha de Registro</th>
+                        
                         <th>Acciones</th>
                     </tr>   
                 </thead>
                 <tbody>
                     {% for instructores in lista_instructores %}
                         <tr>
-                            <td>{{ instructores.documento_identidad }}</td>
-                            <td>{{ instructores.tipo_documento }}</td>
+                            <td><strong><a href="{% url 'instructores:detalle_instructor' instructores.id %}">{{ instructores.documento_identidad }}</a></strong></td>
+                            
                             <td>{{ instructores.nombre }} {{ instructores.apellido }}</td>
                             <td>{{ instructores.telefono }}</td>
                             <td>
                                 <a href="mailto:{{ instructores.correo }}">{{ instructores.correo }}</a>
                             </td>
-                            <td>{{ instructores.fecha_nacimiento }}</td>
+                            
                             <td>{{ instructores.ciudad }}</td>
-                            <td>{{ instructores.direccion }}</td>
+                            
                             <td>{{ instructores.nivel_educativo }}</td>
                             <td>{{ instructores.especialidad }}</td>
                             <td>{{ instructores.anos_experiencia }}</td>
                             <td>{{ instructores.activo }}</td>
-                            <td>{{ instructores.fecha_registro }}</td>
+                            
                             <td class="acciones-cell">
                                 <a href="{% url 'admin:instructores_instructor_change' instructores.id %}"  class="btn_editA">
                                     Editar

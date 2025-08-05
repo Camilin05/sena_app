@@ -291,6 +291,15 @@ body {
     border-radius: 8px;
     border-left: 4px solid var(--medium-green, #28a745);
     margin: 20px;
+    align-items: center;
+}
+.info_tittle {
+    text-align: center;
+    background: #009b5f;
+    max-width: 50%;
+    margin: 20px auto;
+    border-radius: 10px;
+    color: white;
 }
 
 .info-grupo h3 {
