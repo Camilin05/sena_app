@@ -113,55 +113,7 @@ body {
     width: 100%;
 }
 
-.container {
-    max-width: 97%;
-    margin: 20px auto;
-    padding: 0 20px;
-    flex: 1;
-}
 
-.navla {
-    background-color: var(--dark-green);
-    color: var(--white-color);
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px 8px 0 0;
-    flex-wrap: wrap;
-}
-
-.navla .t1 h1 {
-    margin: 0;
-    font-size: 1.8em;
-    color: var(--white-color);
-}
-
-.navla .navegacion ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.navla .navegacion ul li {
-    margin-left: 25px;
-}
-
-.navla .navegacion ul li a {
-    color: var(--white-color);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    padding: 5px 0;
-    transition: color 0.3s ease;
-}
-
-.navla .navegacion ul li a:hover {
-    color: var(--light-green);
-}
 
 .empty-state {
     display: flex;
@@ -363,31 +315,6 @@ body {
     }
 }
 
-.sectionla {
-    padding: 30px 0;
-    text-align: center;
-}
-
-.sectionla h2 {
-    color: var(--accent-green);
-    margin-bottom: 25px;
-    font-size: 2em;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.sectionla h2::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: var(--medium-green);
-    border-radius: 2px;
-}
-
 .hero-section {
     background: linear-gradient(to right, var(--dark-green), var(--medium-green));
     color: var(--white-color);
@@ -559,117 +486,6 @@ body {
 }
 
 .call-to-action .btn-primary:hover {
-    background-color: #556B2F;
-    transform: translateY(-2px);
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    background-color: var(--white-color);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-table thead {
-    background-color: var(--medium-green);
-    color: var(--white-color);
-}
-
-table th {
-    padding: 15px;
-    text-align: left;
-    font-weight: bold;
-    border-bottom: 1px solid var(--border-color);
-}
-
-table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-color);
-}
-
-table tbody tr:nth-child(even) {
-    background-color: var(--hover-color);
-}
-
-table tbody tr:hover {
-    background-color: #D4EDDA;
-    cursor: pointer;
-}
-
-.total-aprendices {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--medium-green), var(--dark-green));
-    color: var(--white-color);
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.total-aprendices:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(46, 139, 87, 0.4);
-    border-color: var(--light-green);
-}
-
-.total-aprendices i {
-    margin-right: 8px;
-    color: var(--light-green);
-}
-
-.acciones-cell {
-    text-align: center;
-    padding: 8px 5px;
-    white-space: nowrap;
-}
-
-.btn_editA,
-.btn_saveA {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 30px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: none;
-    cursor: pointer;
-    text-align: center;
-}
-
-.btn_editA {
-    background-color: #007bff;
-    color: var(--white-color);
-    border: 1px solid #007bff;
-    padding: 6px 12px;
-    font-size: 0.85em;
-    margin: 2px;
-    min-width: 70px;
-}
-
-.btn_editA:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
-}
-
-.btn_saveA {
-    background-color: var(--accent-green);
-    color: var(--white-color);
-}
-
-.btn_saveA:hover {
     background-color: #556B2F;
     transform: translateY(-2px);
 }

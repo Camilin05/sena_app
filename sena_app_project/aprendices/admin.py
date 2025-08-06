@@ -27,6 +27,7 @@ class AprendizAdmin(admin.ModelAdmin):
                 'documento_identidad', 
                 'nombre', 
                 'apellido', 
+                'programa',
                 'fecha_nacimiento'
             )
         }),

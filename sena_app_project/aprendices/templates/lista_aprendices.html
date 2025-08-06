@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Lista de Aprendices{% endblock %}
 {% block content %}
+
     <div class="contenido_la">
         <nav class="navla">
             <div class="t1">
@@ -9,38 +10,36 @@
         </nav>
         <section class="sectionla">
             {% if lista_aprendices %}
-                <h2>Lista de Aprendices</h2>
+                <div class="miniheader">
+                    <h2>Lista de Aprendices</h2>
                     <span class="total-aprendices">
                         <i class="fas fa-users"></i>
                             Total de Aprendices: {{ total_aprendices }}
                     </span>
+                </div>
             <table border="1">
                 <thead>
                     <tr>
-                        <th>Documento de Identidad</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
+                        <th>Documento </th>
+                        <th>Nombre completo</th>                                            
+                        <th>Correo Electrónico</th>    
                         <th>Teléfono</th>
-                        <th>Correo Electrónico</th>
-                        <th>Fecha de Nacimiento</th>
                         <th>Ciudad</th>
-                        <th>Programa</th>
+                        <th>Programa</th>                                                                                      
                         <th>Acciones</th>
                     </tr>   
                 </thead>
                 <tbody>
                     {% for aprendiz in lista_aprendices %}
                         <tr>
-                            <td>{{ aprendiz.documento_identidad }}</td>
-                            <td>{{ aprendiz.nombre }}</td>
-                            <td>{{ aprendiz.apellido }}</td>
-                            <td>{{ aprendiz.telefono }}</td>
+                            <td><strong><a href="aprendiz/{{ aprendiz.id }}">{{aprendiz.documento_identidad}}</strong></a></td>
+                            <td>{{aprendiz.nombre_completo}}</th>  
                             <td>
                                 <a href="mailto:{{ aprendiz.correo }}">{{ aprendiz.correo }}</a>
                             </td>
-                            <td>{{ aprendiz.fecha_nacimiento }}</td>
-                            <td>{{ aprendiz.ciudad }}</td>
-                            <td>{{ aprendiz.programa }}</td>
+                            <td>{{aprendiz.telefono}}</th>
+                            <td>{{aprendiz.ciudad}}</th>
+                            <td>{{aprendiz.programa}}</th>                                                
                             <td class="acciones-cell">
                                 <a href="{% url 'admin:aprendices_aprendiz_change' aprendiz.id %}" class="btn_editA">Editar</a>                            
                             </td>

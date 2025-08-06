@@ -10,48 +10,40 @@
         </nav>
         <section class="sectionla">
             {% if lista_instructores %}
-                <h2>Lista de Instructores</h2>
+                <div class="miniheader">
+                    <h2>Lista de Instructores</h2>
                     <span class="total-aprendices">
                         <i class="fas fa-users"></i>
                             Total de Instructores: {{ total_instructores }}
                     </span>
-            <table border="1">
+                </div>
+            <table border="1">  
                 <thead>
                     <tr>
-                        <th>Documento</th>
-                        
+                        <th>Documento</th>                        
                         <th>Nombre</th>
                         <th>Teléfono</th>
-                        <th>Correo Electrónico</th>
-                        
-                        <th>Ciudad</th>
-                        
-                        <th>Nivel Educativo</th>
+                        <th>Correo Electrónico</th>                        
+                        <th>Ciudad</th>                                                
                         <th>Especialidad</th>
                         <th>Años de Experiencia</th>
-                        <th>Activo</th>
-                        
+                        <th>Activo</th>                        
                         <th>Acciones</th>
                     </tr>   
                 </thead>
                 <tbody>
                     {% for instructores in lista_instructores %}
                         <tr>
-                            <td><strong><a href="{% url 'instructores:detalle_instructor' instructores.id %}">{{ instructores.documento_identidad }}</a></strong></td>
-                            
-                            <td>{{ instructores.nombre }} {{ instructores.apellido }}</td>
+                            <td><strong><a href="{% url 'instructores:detalle_instructor' instructores.id %}">{{ instructores.documento_identidad }}</a></strong></td>                            
+                            <td>{{ instructores.nombre_completo }}</td>
                             <td>{{ instructores.telefono }}</td>
                             <td>
                                 <a href="mailto:{{ instructores.correo }}">{{ instructores.correo }}</a>
-                            </td>
-                            
-                            <td>{{ instructores.ciudad }}</td>
-                            
-                            <td>{{ instructores.nivel_educativo }}</td>
+                            </td>                            
+                            <td>{{ instructores.ciudad }}</td>                                                        
                             <td>{{ instructores.especialidad }}</td>
                             <td>{{ instructores.anos_experiencia }}</td>
-                            <td>{{ instructores.activo }}</td>
-                            
+                            <td>{{ instructores.activo }}</td>                            
                             <td class="acciones-cell">
                                 <a href="{% url 'admin:instructores_instructor_change' instructores.id %}"  class="btn_editA">
                                     Editar

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Detalle de Aprendiz{% endblock %}
+{% block content %}
+<section class="detalle-curso">
+    <h2>Detalles del Curso: </h2>
+    <div class="curso-info">
+        <div class="info-grupo">
+            <div class="info_tittle">
+            <h2>Información General</h2>
+            </div>
+                <p><strong>Documento de Identidad:</strong> {{ aprendiz.documento_identidad }}</p>
+                    <p><strong>Nombre completo:</strong> {{ aprendiz.nombre_completo }}</p>                        
+                            <p><strong>Telefono:</strong> {{ aprendiz.telefono }}</p>
+                                <p><strong>Correo Electrónico:</strong> {{ aprendiz.correo }}</p>
+                                    <p><strong>Fecha de Nacimiento:</strong> {{ aprendiz.fecha_nacimiento }}</p>
+                                        <p><strong>Ciudad:</strong> {{ aprendiz.ciudad }}</p>
+                                            <p><strong>Programa:</strong> {{ aprendiz.programa }}</p>
+                                                <p><strong>Acciones:</strong>
+                                                    <a href="{% url 'admin:aprendices_aprendiz_change' aprendiz.id %}" class="btn-dc">
+                                                        Editar
+                                                    </a> 
+                                                </p>
+        </div>        
+    </div>
+    <div class="acciones">
+            <a href="{% url 'admin:aprendices_aprendiz_change' aprendiz.id %}" class="btn-primary">Editar</a>
+            <a href="/aprendices" class="btn-secondary">Volver</a> 
+        </div>
+</section>  
+{% endblock %}

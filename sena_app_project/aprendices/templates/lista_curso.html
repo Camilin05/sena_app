@@ -10,22 +10,24 @@
         </nav>
         <section class="sectionla">
             {% if lista_cursos %}
+            <div class="miniheader">
                 <h2>Lista de Cursos</h2>
                     <span class="total-aprendices">
                         <i class="fas fa-users"></i>
                             Total de Cursos: {{ total_cursos }}
                     </span>
+                    </div>
             <table border="1">
                 <thead>
                     <tr>
-                        <td>Código curso</td>
-                        <td>Nombre curso</td>
-                        <td>Programa de formación</td>
-                        <td>Fecha Inicio</td>
-                        <td>Fecha Fin</td>
-                        <td>Horario</td>                                            
-                        <td>Estado</td>                                                
-                        <td>Acciones</td>
+                        <th>Código curso</th>
+                        <th>Nombre curso</th>
+                        <th>Programa de formación</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Horario</th>                                            
+                        <th>Estado</th>                                                
+                        <th>Acciones</th>
                     </tr>   
                 </thead>
                 <tbody>
