@@ -10,6 +10,7 @@
                 <div class="info_tittle">
                     <h2>Información General</h2>
                 </div>
+                <div class="info-grupoDentro">
                     <p><strong>Nombre:</strong> {{ instructor.nombre }}</p>
                         <p><strong>Apellido:</strong> {{ instructor.apellido }}</p>
                             <p><strong>Documento de Identidad:</strong> {{ instructor.documento_identidad }}</p>                            
@@ -24,11 +25,14 @@
                                                                 <p><strong>Años de Experiencia:</strong> {{ instructor.anos_experiencia }}</p>
                                                                     <p><strong>Activo:</strong> {{ instructor.activo }}</p>
                                                                         <p><strong>Fecha de Registro:</strong> {{ instructor.fecha_registro }}</p>
+                </div>                                                                        
             </div>
+            
             <div class="info-grupo">
                 <div class="info_tittle">
                     <h2>Cursos coordinados</h2>
-                </div>                
+                </div>               
+                <div class="info-grupoDentro">
                 <p><strong>Cursos:</strong> {{ cursos_coordinados|length }}</p>
                     {% for curso in cursos_coordinados %}
                         <p>{{ curso }}</p>
@@ -41,10 +45,12 @@
                         <p>
                             {% endif %}
             </div>
+            </div>
             <div class="info-grupo">
                 <div class="info_tittle">
                 <h2>Cursos Impartidos</h2>
                 </div>
+                <div class="info-grupoDentro">
                 <p><strong>Cursos:</strong> {{ cursos_impartidos|length }}</p>
                     {% for curso in cursos_impartidos %}
                         <p>{{ curso }}</p>
@@ -56,6 +62,7 @@
                             </a> 
                         <p>
                             {% endif %}
+            </div>
             </div>
         </div>
         <div class="acciones">

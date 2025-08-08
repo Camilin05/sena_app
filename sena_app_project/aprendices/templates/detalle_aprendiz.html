@@ -8,6 +8,7 @@
             <div class="info_tittle">
             <h2>Información General</h2>
             </div>
+            <div class="info-grupoDentro">
                 <p><strong>Documento de Identidad:</strong> {{ aprendiz.documento_identidad }}</p>
                     <p><strong>Nombre completo:</strong> {{ aprendiz.nombre_completo }}</p>                        
                             <p><strong>Telefono:</strong> {{ aprendiz.telefono }}</p>
@@ -20,7 +21,8 @@
                                                         Editar
                                                     </a> 
                                                 </p>
-        </div>        
+        </div> 
+    </div>
     </div>
     <div class="acciones">
             <a href="{% url 'admin:aprendices_aprendiz_change' aprendiz.id %}" class="btn-primary">Editar</a>

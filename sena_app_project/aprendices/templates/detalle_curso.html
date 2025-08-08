@@ -10,6 +10,7 @@
                 <div class="info_tittle">
                 <h2>Información General</h2>
                 </div>
+                <div class="info-grupoDentro">
                     <p><strong>Programa:</strong> {{ curso.programa }}</p>
                         <p><strong>Código:</strong> {{ curso.codigo }}</p>
                             <p><strong>Nombre:</strong> {{ curso.nombre }}</p>                    
@@ -23,12 +24,14 @@
                                                     <p><strong>Observaciones:</strong> No hay observaciones registradas.</p>
                                                 {% endif %}                                            
                                                     <p><strong>Horario:</strong> {{ curso.horario }}</p>
+                </div>
             </div>
             <div class="info-grupo">     
                     <div class="info_tittle">         
                         <h2>Aprendices Registrados</h2>   
                     </div>
-                    <span>{{ aprendices_curso|length }} estudiantes</span>                                
+                    <div class="info-grupoDentro">
+                    <span>Hay {{ aprendices_curso|length }} estudiantes:</span>                                
                         {% for aprendiz in aprendices_curso %}                                                    
                                 <h5>{{ aprendiz }}</h5>                                                    
                         {% endfor %}                    
@@ -38,12 +41,14 @@
                                     Ver
                                 </a> 
                             <p>                                           
-                {% endif %}                   
+                {% endif %}       
+                </div>
             </div>
             <div class="info-grupo">
                 <div class="info_tittle">
-                    </h2>Instructores</h2>
+                    <h2>Instructores</h2>
                 </div>
+                <div class="info-grupoDentro">
                     <p><strong>Instructor a Cargo:</strong> {{ curso.instructor_coordinador }}</p>
                         <p><strong>Instructores:</strong> {{ instructoqres_curso|length }}</p>
                             {% for instructor in instructoqres_curso %}
@@ -56,6 +61,7 @@
                             </a> 
                         <p>
                             {% endif %}
+                            </div>
         </div>
         <div class="acciones">
             <a href="{% url 'admin:aprendices_curso_change' curso.id %}" class="btn-primary">Editar</a>

@@ -237,20 +237,34 @@ body {
 }
 
 .info-grupo {
-    text-align: center;
-    background: #e8fff6;
+    background-color: var(--light-grey);
+    text-align: center;    
     padding: 20px;
     border-radius: 8px;
-    border-left: 4px solid var(--medium-green, #28a745);
+    border-right: 4px solid var(--medium-green, #28a745);
     margin: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.info-grupoDentro {
+    width: 800px;
+    border-radius: 8px;
+    border-left: 4px solid var(--medium-green, #28a745);
+    margin: 5px;
     align-items: center;
 }
 .info_tittle {
+    padding: 5px;
     text-align: center;
     background: #009b5f;
-    max-width: 50%;
-    margin: 20px auto;
+    width: 180px;
+    
     border-radius: 10px;
+    color: white;
+}
+.info_tittle h2 {
+    font-size: 1rem;
     color: white;
 }
 
@@ -321,30 +335,29 @@ body {
     padding: 10px 10px;
     text-align: center;
     border-radius: 8px;
-    margin-bottom: 40px;
-    margin-top: 0 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    width: 80%;
     margin: 0 auto;
 }
 
 .hero-section h1 {
-    font-size: 3em;
+    margin: 0;
+    padding: 5px;
+    font-size: 2em;
     margin-bottom: 20px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.hero-section p {
-    font-size: 1.2em;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
+.hero-section p {    
+    max-width: 800px;    
     line-height: 1.8;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .hero-section .btn-primary,
 .hero-section .btn-secondary {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
@@ -357,6 +370,7 @@ body {
     background-color: var(--accent-green);
     color: var(--white-color);
     border: 2px solid var(--accent-green);
+    margin: 5px
 }
 
 .hero-section .btn-primary:hover {
@@ -385,8 +399,9 @@ body {
 }
 
 .info-cards .card {
+    font-weight: bold;
     background-color: var(--white-color);
-    padding: 30px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -427,6 +442,9 @@ body {
 }
 
 .info-cards .card-link {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--medium-green);
     color: var(--accent-green);
     text-decoration: none;
     font-weight: bold;
@@ -505,7 +523,7 @@ body {
 
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
+        flex-direction: column; 
         text-align: center;
         padding: 1rem;
     }

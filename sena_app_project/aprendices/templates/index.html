@@ -3,46 +3,54 @@
         {% block content %}
             <section class="hero-section">
                 <div class="hero-content">
-                    <h1>Bienvenido a la app del SENA by Camilo Avila</h1>
+                    <h1>Bienvenido a la app del SENA</h1>
                         <p>Tu plataforma integral para administrar y consultar información de aprendices y programas de formación.</p>
                             <a href="{% url 'admin:index' %}" class="btn-primary">Panel administrativo</a>                            
                 </div>
             </section>
             <section class="info-cards">
                 <div class="card">
+                    <a href="{% url 'aprendices:lista_aprendices' %}"> 
                     <i class="fas fa-users icon-green"></i>
+                    </a>
                         <h3>Gestión de Aprendices</h3>
                             <p>Accede, edita y gestiona la información detallada de cada aprendiz.</p>
                                 <img src="https://www.seguracontadores.com/wp-content/uploads/2024/06/aprendices-sena-5.jpg" alt="Aprendices SENA" class="card-image" height="200px">
                                     <div class="card-text">
                                         <p> Total de aprendices: {{ total_aprendices }}</p>
                                 </div>  
-                                    <a href="{% url 'aprendices:lista_aprendices' %}" class="card-link">Ir a Aprendices <i class="fas fa-arrow-right"></i></a>
-                                </div>
+                                    <a href="{% url 'aprendices:lista_aprendices' %}" class="card-link">Ir a Aprendices </a>
+                                    
+                                </div>                            
                 <div class="card">  
+                    <a href="{% url 'instructores:lista_instructores' %}">
                     <i class="fas fa-book-open icon-green"></i>
+                    </a>
                         <h3>Gestión de Instructores</h3>
                             <p>Accede, edita y gestiona la información detallada de cada instructor.</p>
                                 <img src="https://www.tropicanafm.com/wp-content/uploads/2024/05/Instructor-sena.png" alt="Aprendices SENA" class="card-image" height="200px">
                                     <div class="card-text">
                                         <p>Total instructores: {{ total_instructores }}</p>
                                             </div> 
-                                                <a href="{% url 'instructores:lista_instructores' %}" class="card-link">Ir a Instructores <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                                
-                            <div class="card">  
+                                                <a href="{% url 'instructores:lista_instructores' %}" class="card-link">Ir a Instructores </a>
+                            </div>                                
+                <div class="card">
+                    <a href="{% url 'programas:lista_programas' %}">
                     <i class="fas fa-graduation-cap icon-green"></i>
+                    </a>
                         <h3>Gestión de Programas</h3>
                             <p>Accede, edita y gestiona la información detallada de cada programas.</p>                                
                                 <img src="https://www.infobae.com/new-resizer/2MyIP2mE6ogUGQKnm1aUwriSz7c=/arc-anglerfish-arc2-prod-infobae/public/5DIVG5LYCFDCHOMQGZPMXTD3OM.jpg" alt="Aprendices SENA" class="card-image" height="200px">
                                     <div class="card-text">
                                         <p>Total de programas: {{ total_programas }}</p>
                                             </div> 
-                                                <a href="{% url 'programas:lista_programas' %}" class="card-link">Ir a Programas <i class="fas fa-arrow-right"></i></a>
+                                                <a href="{% url 'programas:lista_programas' %}" class="card-link">Ir a Programas </a>
                             </div>
                         </div>
-                            <div class="card">  
+                <div class="card">  
+                    <a href="{% url 'aprendices:lista_cursos' %}">
                     <i class="fas fa-chalkboard-teacher icon-green"></i>
+                    </a>        
                         <h3>Gestión de Cursos</h3>
                             <p>Accede, edita y gestiona la información detallada de cada cursos.</p>                            
                                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia2KCtooA70cZczgj6BnaNpvR_HEVRzkoAH2oOQO7NMADxArhN3Gjd8HgUO1hrbUMagQJcqrmeMWYty-O8byA7uUAYp2rc4iR_RBtMHpGl4rqL9l_1p0EGicveZv2ejkmOpfQwpMkRgw8/s280/nueva+ficha+uniforme-01.jpg" alt="Aprendices SENA" class="card-image" height="200px">
@@ -50,7 +58,7 @@
                                         <p> Total de Cursos: {{ total_cursos }}</p>
                                         <p> Cursos Activos: {{ cursos_activos }}</p>
                                             </div> 
-                                                <a href="{% url 'aprendices:lista_cursos' %}" class="card-link">Ir a Cursos <i class="fas fa-arrow-right"></i></a>
+                                                <a href="{% url 'aprendices:lista_cursos' %}" class="card-link">Ir a Cursos </a>
                             </div>
                 </section>
             </section>

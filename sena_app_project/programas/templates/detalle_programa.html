@@ -10,6 +10,7 @@
                 <div class="info_tittle">
                     <h2>Información General</h2>
                 </div>
+                <div class="info-grupoDentro">
                     <p><strong>Código:</strong> {{ programa.codigo }}</p>
                         <p><strong>Nombre:</strong> {{ programa.nombre }}</p>
                             <p><strong>Nivel de Formación:</strong> {{ programa.nivel_formacion }}</p>
@@ -26,10 +27,12 @@
                                                                         <p><strong>Fecha de Creación:</strong> {{ programa.fecha_creacion }}</p>
                                                                             <p><strong>Fecha de registro:</strong> {{ programa.fecha_registro }}</p>
             </div>
+            </div>
             <div class="info-grupo">
                 <div class="info_tittle">
                     <h2>Cursos</h2>
                 </div>
+                <div class="info-grupoDentro">
                 <p><strong>Cursos:</strong> {{ cursos|length }}</p>
                     {% for curso in cursos %}
                         <p>{{ curso }}</p>
@@ -41,6 +44,7 @@
                             </a> 
                         <p>
                             {% endif %}
+            </div>
             </div>
         </div>
         <div class="acciones">
