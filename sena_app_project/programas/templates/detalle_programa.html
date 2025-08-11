@@ -1,55 +1,53 @@
 {% extends 'base.html' %}
-
 {% block title %}Detalles del Programa{% endblock %}
-
 {% block content %}
-    <section class="detalle-curso">
-        <h2>Detalles del Programa: </h2>
-        <div class="curso-info">
-            <div class="info-grupo">
-                <div class="info_tittle">
-                    <h2>Información General</h2>
-                </div>
-                <div class="info-grupoDentro">
-                    <p><strong>Código:</strong> {{ programa.codigo }}</p>
-                        <p><strong>Nombre:</strong> {{ programa.nombre }}</p>
-                            <p><strong>Nivel de Formación:</strong> {{ programa.nivel_formacion }}</p>
-                                <p><strong>Modalidad:</strong> {{ programa.modalidad }}</p>
-                                    <p><strong>Duración (meses):</strong> {{ programa.duracion_meses }}</p>
-                                        <p><strong>Duración (horas):</strong> {{ programa.duracion_horas }}</p>
-                                            <p><strong>Descripción:</strong> {{ programa.descripcion }}</p>
-                                                <p><strong>Competencias:</strong> {{ programa.competencias }}</p>
-                                                    <p><strong>Perfil de egreso:</strong> {{ programa.perfil_egreso }}</p>
-                                                        <p><strong>Requisitos de ingreso:</strong> {{ programa.requisitos_ingreso }}</p>
-                                                            <p><strong>Centro de Formación:</strong> {{ programa.centro_formacion }}</p>
-                                                                <p><strong>Regional:</strong> {{ programa.regional }}</p>
-                                                                    <p><strong>Estado:</strong> {{ programa.estado }}</p>
-                                                                        <p><strong>Fecha de Creación:</strong> {{ programa.fecha_creacion }}</p>
-                                                                            <p><strong>Fecha de registro:</strong> {{ programa.fecha_registro }}</p>
+<section class="detalle-curso">
+    <h2>Detalles del Programa:</h2>
+    <div class="curso-info">
+        <div class="info-detalle-card">
+            <div class="info_tittle">
+                <h2>Información General</h2>
             </div>
+            <div class="info-grupoDentro">
+                <p><strong>Código:</strong> {{ programa.codigo }}</p>
+                    <p><strong>Nombre:</strong> {{ programa.nombre }}</p>
+                        <p><strong>Nivel de Formación:</strong> {{ programa.nivel_formacion }}</p>
+                            <p><strong>Modalidad:</strong> {{ programa.modalidad }}</p>
+                                <p><strong>Duración (meses):</strong> {{ programa.duracion_meses }}</p>
+                                    <p><strong>Duración (horas):</strong> {{ programa.duracion_horas }}</p>
+                                        <p><strong>Descripción:</strong> {{ programa.descripcion }}</p>
+                                            <p><strong>Competencias:</strong> {{ programa.competencias }}</p>
+                                                <p><strong>Perfil de egreso:</strong> {{ programa.perfil_egreso }}</p>
+                                                    <p><strong>Requisitos de ingreso:</strong> {{ programa.requisitos_ingreso }}</p>
+                                                        <p><strong>Centro de Formación:</strong> {{ programa.centro_formacion }}</p>
+                                                            <p><strong>Regional:</strong> {{ programa.regional }}</p>
+                                                                <p><strong>Estado:</strong> {{ programa.estado }}</p>
+                                                                    <p><strong>Fecha de Creación:</strong> {{ programa.fecha_creacion }}</p>
+                                                                        <p><strong>Fecha de registro:</strong> {{ programa.fecha_registro }}</p>
             </div>
-            <div class="info-grupo">
-                <div class="info_tittle">
-                    <h2>Cursos</h2>
-                </div>
-                <div class="info-grupoDentro">
+        </div>
+        <div class="info-detalle-card">
+            <div class="info_tittle">
+                <h2>Cursos</h2>
+            </div>
+            <div class="info-grupoDentro">
                 <p><strong>Cursos:</strong> {{ cursos|length }}</p>
-                    {% for curso in cursos %}
-                        <p>{{ curso }}</p>
-                    {% endfor %}
-                    {% if cursos %}
-                        <p>
-                            Lista de cursos: <a href="{% url 'aprendices:lista_cursos' %}" class="btn-dc">
-                                Ver
-                            </a> 
-                        <p>
-                            {% endif %}
-            </div>
+                {% for curso in cursos %}
+                    <h5>{{ curso }}</h5>
+                {% endfor %}
+                {% if cursos %}
+                    <p>
+                        Lista de cursos: <a href="{% url 'aprendices:lista_cursos' %}" class="btn-dc">
+                            Ver
+                        </a>
+                    </p>
+                {% endif %}
             </div>
         </div>
-        <div class="acciones">
-            <a href="{% url 'admin:programas_programa_change' programa.id %}" class="btn-primary">Editar</a>
-            <a href="/programas" class="btn-secondary">Volver</a> 
-        </div>
-    </section>
+    </div>
+    <div class="acciones">
+        <a href="{% url 'admin:programas_programa_change' programa.id %}" class="btn-primary">Editar</a>
+        <a href="/programas" class="btn-secondary">Volver</a>
+    </div>
+</section>
 {% endblock %}

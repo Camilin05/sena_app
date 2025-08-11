@@ -1,73 +1,70 @@
 {% extends 'base.html' %}
-
 {% block title %}Detalles del Instructor{% endblock %}
-
 {% block content %}
-    <section class="detalle-curso">
-        <h2>Detalles del Instructor: </h2>
-        <div class="curso-info">
-            <div class="info-grupo">
-                <div class="info_tittle">
-                    <h2>Información General</h2>
-                </div>
-                <div class="info-grupoDentro">
-                    <p><strong>Nombre:</strong> {{ instructor.nombre }}</p>
-                        <p><strong>Apellido:</strong> {{ instructor.apellido }}</p>
-                            <p><strong>Documento de Identidad:</strong> {{ instructor.documento_identidad }}</p>                            
-                                <p><strong>Tipo de Documento:</strong> {{ instructor.tipo_documento }}</p>
-                                    <p><strong>Telefono:</strong> {{ instructor.telefono }}</p>
-                                        <p><strong>Correo Electrónico:</strong> {{ instructor.correo }}</p>
-                                            <p><strong>Fecha de Nacimiento:</strong> {{ instructor.fecha_nacimiento }}</p>
-                                                <p><strong>Ciudad:</strong> {{ instructor.ciudad }}</p>
-                                                    <p><strong>Dirección:</strong> {{ instructor.direccion }}</p>
-                                                        <p><strong>Nivel Educativo:</strong> {{ instructor.nivel_educativo }}</p>
-                                                            <p><strong>Especialidad:</strong> {{ instructor.especialidad }}</p>
-                                                                <p><strong>Años de Experiencia:</strong> {{ instructor.anos_experiencia }}</p>
-                                                                    <p><strong>Activo:</strong> {{ instructor.activo }}</p>
-                                                                        <p><strong>Fecha de Registro:</strong> {{ instructor.fecha_registro }}</p>
-                </div>                                                                        
+<section class="detalle-curso">
+    <h2>Detalles del Instructor:</h2>
+    <div class="curso-info">
+        <div class="info-detalle-card">
+            <div class="info_tittle">
+                <h2>Información General</h2>
             </div>
-            
-            <div class="info-grupo">
-                <div class="info_tittle">
-                    <h2>Cursos coordinados</h2>
-                </div>               
-                <div class="info-grupoDentro">
+            <div class="info-grupoDentro">
+                <p><strong>Nombre:</strong> {{ instructor.nombre }}</p>
+                    <p><strong>Apellido:</strong> {{ instructor.apellido }}</p>
+                        <p><strong>Documento de Identidad:</strong> {{ instructor.documento_identidad }}</p>
+                            <p><strong>Tipo de Documento:</strong> {{ instructor.tipo_documento }}</p>
+                                <p><strong>Telefono:</strong> {{ instructor.telefono }}</p>
+                                    <p><strong>Correo Electrónico:</strong> {{ instructor.correo }}</p>
+                                        <p><strong>Fecha de Nacimiento:</strong> {{ instructor.fecha_nacimiento }}</p>
+                                            <p><strong>Ciudad:</strong> {{ instructor.ciudad }}</p>
+                                                <p><strong>Dirección:</strong> {{ instructor.direccion }}</p>
+                                                    <p><strong>Nivel Educativo:</strong> {{ instructor.nivel_educativo }}</p>
+                                                        <p><strong>Especialidad:</strong> {{ instructor.especialidad }}</p>
+                                                            <p><strong>Años de Experiencia:</strong> {{ instructor.anos_experiencia }}</p>
+                                                                <p><strong>Activo:</strong> {{ instructor.activo }}</p>
+                                                                    <p><strong>Fecha de Registro:</strong> {{ instructor.fecha_registro }}</p>
+            </div>
+        </div>
+        <div class="info-detalle-card">
+            <div class="info_tittle">
+                <h2>Cursos coordinados</h2>
+            </div>
+            <div class="info-grupoDentro">
                 <p><strong>Cursos:</strong> {{ cursos_coordinados|length }}</p>
-                    {% for curso in cursos_coordinados %}
-                        <p>{{ curso }}</p>
-                    {% endfor %}
-                    {% if cursos_coordinados %}
-                        <p>
-                            Lista de cursos: <a href="{% url 'aprendices:lista_cursos' %}" class="btn-dc">
-                                Ver
-                            </a> 
-                        <p>
-                            {% endif %}
+                {% for curso in cursos_coordinados %}
+                    <h5>{{ curso }}</h5>
+                {% endfor %}
+                {% if cursos_coordinados %}
+                    <p>
+                        Lista de cursos: <a href="{% url 'aprendices:lista_cursos' %}" class="btn-dc">
+                            Ver
+                        </a>
+                    </p>
+                {% endif %}
             </div>
-            </div>
-            <div class="info-grupo">
-                <div class="info_tittle">
+        </div>
+        <div class="info-detalle-card">
+            <div class="info_tittle">
                 <h2>Cursos Impartidos</h2>
-                </div>
-                <div class="info-grupoDentro">
+            </div>
+            <div class="info-grupoDentro">
                 <p><strong>Cursos:</strong> {{ cursos_impartidos|length }}</p>
-                    {% for curso in cursos_impartidos %}
-                        <p>{{ curso }}</p>
-                    {% endfor %}
-                    {% if cursos_impartidos %}
-                        <p>
-                            Lista de cursos: <a href="{% url 'aprendices:lista_cursos' %}" class="btn-dc">
-                                Ver
-                            </a> 
-                        <p>
-                            {% endif %}
-            </div>
+                {% for curso in cursos_impartidos %}
+                    <h5>{{ curso }}</h5>
+                {% endfor %}
+                {% if cursos_impartidos %}
+                    <p>
+                        Lista de cursos: <a href="{% url 'aprendices:lista_cursos' %}" class="btn-dc">
+                            Ver
+                        </a>
+                    </p>
+                {% endif %}
             </div>
         </div>
-        <div class="acciones">
-            <a href="{% url 'admin:instructores_instructor_change' instructor.id %}" class="btn-primary">Editar</a>
-            <a href="/instructores" class="btn-secondary">Volver</a> 
-        </div>
-    </section>
+    </div>
+    <div class="acciones">
+        <a href="{% url 'admin:instructores_instructor_change' instructor.id %}" class="btn-primary">Editar</a>
+        <a href="/instructores" class="btn-secondary">Volver</a>
+    </div>
+</section>
 {% endblock %}

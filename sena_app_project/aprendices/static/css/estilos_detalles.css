@@ -1,0 +1,70 @@
+.detalle-curso {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+.detalle-programa {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-detalle-card {
+    background-color: var(--light-grey);
+    text-align: center;    
+    padding: 20px;
+    border-radius: 8px;
+    border-right: 4px solid var(--medium-green, #28a745);
+    margin: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.info-grupoDentro {
+    width: 800px;
+    border-radius: 8px;
+    border-left: 4px solid var(--medium-green, #28a745);
+    margin: 5px;
+    align-items: center;
+}
+.info_tittle {
+    padding: 5px;
+    text-align: center;
+    background: #009b5f;
+    width: 180px;
+    
+    border-radius: 10px;
+    color: white;
+}
+.info_tittle h2 {
+    font-size: 1rem;
+    color: white;
+}
+
+.info-grupo h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.info-grupo p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.info-grupo strong {
+    color: #333;
+    font-weight: 600;
+}
+.acciones {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
