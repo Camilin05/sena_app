@@ -47,7 +47,7 @@
                     {% endfor %}
                 </tbody>
             </table>
-        <a href="{% url 'admin:aprendices_aprendiz_add' %}" class="btn_saveA">
+        <a href="{% url 'aprendices:crear_aprendiz' %}" class="btn_saveA">
             Nuevo Aprendiz
         </a>
             {% else %}
@@ -58,7 +58,7 @@
                         <p>Aún no se han registrado aprendices en el sistema. Puedes agregar el primer aprendiz usando el panel administrativo.</p>
                         
                         <div class="empty-state-actions">
-                            <a href="{% url 'admin:aprendices_aprendiz_add' %}" class="btn-primary">
+                            <a href="{% url 'aprendices:crear_aprendiz' %}" class="btn-primary">
                                 <i class="fas fa-plus"></i> Agregar Primer Aprendiz
                             </a>
                             <a href="{% url 'admin:index' %}" class="btn-secondary">

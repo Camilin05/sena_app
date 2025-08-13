@@ -4,6 +4,8 @@ from .models import Aprendiz, Curso
 from django.shortcuts import get_object_or_404
 from programas.models import Programa
 from instructores.models import Instructor
+from aprendices.forms import AprendizForm
+from django.views import generic
 
 # Create your views here.
 def aprendices (request):
@@ -64,3 +66,13 @@ def detalle_aprendiz(request, aprendiz_id):
         'aprendiz': aprendiz,        
     }
     return HttpResponse(template.render(context, request))
+
+class AprendizFormView(generic.FormView):
+    template_name = "crear_aprendiz.html"
+    form_class = AprendizForm
+    success_url = "../aprendices/"
+
+#Metodo para guardar el Formulario
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)

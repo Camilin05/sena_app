@@ -360,7 +360,7 @@ body {
 .info-cards .card-link {
     padding: 10px;
     border-radius: 10px;
-    border: 2px solid var(--medium-green);
+    border-bottom: 2px solid var(--medium-green);
     color: var(--accent-green);
     text-decoration: none;
     font-weight: bold;
@@ -368,7 +368,7 @@ body {
     transition: color 0.3s ease;
     display: inline-flex;
     align-items: center;
-}
+}   
 
 .info-cards .card-link i {
     font-size: 0.8em;
