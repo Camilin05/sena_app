@@ -46,7 +46,7 @@
                     {% endfor %}
                 </tbody>
             </table>
-        <a href="{% url 'admin:programas_programa_add' %}" class="btn_saveA">
+        <a href="{% url 'programas:crear_programa' %}" class="btn_saveA">
             Nuevo Programa
         </a>
             {% else %}
@@ -57,7 +57,7 @@
                         <p>Aún no se han registrado programas en el sistema. Puedes agregar el primer programa usando el panel administrativo.</p>
                         
                         <div class="empty-state-actions">
-                            <a href="{% url 'admin:programas_programa_add' %}" class="btn-primary">
+                            <a href="{% url 'programas:crear_programas' %}" class="btn-primary">
                                 <i class="fas fa-plus"></i> Agregar Primer Programa
                             </a>
                             <a href="{% url 'admin:index' %}" class="btn-secondary">

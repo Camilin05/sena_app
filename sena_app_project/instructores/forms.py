@@ -10,7 +10,7 @@ class InstructorForm(forms.Form):
     correo = forms.EmailField(required=False, label="Correo Electrónico", help_text="Ingrese el correo electrónico del instructor.")
     fecha_nacimiento = forms.DateField(label="Fecha de Nacimiento", help_text="Ingrese la fecha de nacimiento del instructor.")
     ciudad = forms.CharField(max_length=100, required=False, label="Ciudad", help_text="Ingrese la ciudad de residencia del instructor.")
-    direccion = forms.CharField(widget=forms.Textarea, required=False, label="Dirección", help_text="Ingrese la dirección del instructor.")
+    direccion = forms.CharField( required=False, label="Dirección", help_text="Ingrese la dirección del instructor.")
     nivel_educativo = forms.ChoiceField(choices=Instructor.NIVEL_EDUCATIVO_CHOICES, label="Nivel Educativo", help_text="Seleccione el nivel educativo del instructor.")
     especialidad = forms.CharField(max_length=100, label="Especialidad", help_text="Ingrese la especialidad del instructor.")
     anos_experiencia = forms.IntegerField(min_value=0, label="Años de Experiencia", help_text="Ingrese los años de experiencia del instructor.")
