@@ -31,7 +31,7 @@ def detalle_programa(request, programa_id):
 class ProgramaForm(FormView):
     template_name = 'crear_programa.html'
     form_class = ProgramaForm
-    success_url = "programas:lista_programas"
+    success_url = "../programas/"
     
     def form_valid(self, form):
         
